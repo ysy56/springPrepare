@@ -17,4 +17,14 @@
 1-12. 데이터를 Client에 반환하는 방법  
 1-13. Jackson이란 무엇일까?  
 1-14. Path Variable과 Request Param  
-1-15. HTTP 데이터를 객체로 처리하는 방법
+1-15. HTTP 데이터를 객체로 처리하는 방법  
+1-16. 메모장 프로젝트 설계  
+1-17. Create, Read 구현하기  
+1-18. Update, Delete 구현하기  
+1-19. Database  
+1-20. SQL  
+1-21. SQL 연습하기  
+1-22. JDBC란 무엇일까?  
+#### 🌱 스프링 입문 주차 2 주차  
+2-1. 3 Layer Architecture  
+2-2. 역할 분리하기
