@@ -26,6 +26,11 @@ dependencies {
     implementation 'mysql:mysql-connector-java:8.0.28'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
 
+    // JPA 구현체인 hibernate
+    implementation 'org.hibernate:hibernate-core:6.1.7.Final'
+    // MySQL
+    // implementation 'mysql:mysql-connector-java:8.0.28'
+
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
