@@ -27,4 +27,16 @@
 1-22. JDBC란 무엇일까?  
 #### 🌱 스프링 입문 주차 2 주차  
 2-1. 3 Layer Architecture  
-2-2. 역할 분리하기
+2-2. 역할 분리하기  
+2-3. IoC(제어의 역전), DI(의존성 주입) 이해하기  
+2-4. 메모장 프로젝트의 IoC & DI  
+2-5. IoC Container와 Bean  
+2-6. JPA란 무엇일까?  
+2-7. Entity 이해하기  
+2-8. 영속성 컨텍스트란 무엇일까?  
+2-9. 영속성 컨텍스트의 기능  
+2-10. Entity의 상태  
+2-11. SpringBoot의 JPA  
+2-12. Spring Data JPA란 무엇일까?  
+2-13. JPA Auditing 적용하기  
+2-14. Query Methods란 무엇일까?
