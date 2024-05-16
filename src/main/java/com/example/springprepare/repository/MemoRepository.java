@@ -1,5 +1,6 @@
 package com.example.springprepare.repository;
 
+import com.example.springprepare.dto.MemoRequestDto;
 import com.example.springprepare.dto.MemoResponseDto;
 import com.example.springprepare.entity.Memo;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -26,7 +27,7 @@ public class MemoRepository {
         KeyHolder keyHolder = new GeneratedKeyHolder(); // 기본 키를 반환받기 위한 객체
 
         String sql = "INSERT INTO memo (username, contents) VALUES (?, ?)";
-        jdbcTemplate.update( con -> {
+        jdbcTemplate.update(con -> {
                     PreparedStatement preparedStatement = con.prepareStatement(sql,
                             Statement.RETURN_GENERATED_KEYS);
 
@@ -57,5 +58,31 @@ public class MemoRepository {
                 return new MemoResponseDto(id, username, contents);
             }
         });
+    }
+
+    public void update(Long id, MemoRequestDto requestDto) {
+        String sql = "UPDATE memo SET username = ?, contents = ? WHERE id = ?";
+        jdbcTemplate.update(sql, requestDto.getUsername(), requestDto.getContents(), id);
+    }
+
+    public void delete(Long id) {
+        String sql = "DELETE FROM memo WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+    }
+
+    public Memo findById(Long id) {
+        // DB 조회
+        String sql = "SELECT * FROM memo WHERE id = ?";
+
+        return jdbcTemplate.query(sql, resultSet -> {
+            if (resultSet.next()) {
+                Memo memo = new Memo();
+                memo.setUsername(resultSet.getString("username"));
+                memo.setContents(resultSet.getString("contents"));
+                return memo;
+            } else {
+                return null;
+            }
+        }, id);
     }
 }
