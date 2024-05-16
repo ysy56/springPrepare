@@ -3,6 +3,7 @@ package com.example.springprepare.controller;
 import com.example.springprepare.dto.MemoRequestDto;
 import com.example.springprepare.dto.MemoResponseDto;
 import com.example.springprepare.service.MemoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +14,7 @@ public class MemoController {
 
     private final MemoService memoService;
 
+    @Autowired
     public MemoController(MemoService memoService) {
         this.memoService = memoService;
     }

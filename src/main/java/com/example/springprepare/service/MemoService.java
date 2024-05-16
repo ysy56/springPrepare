@@ -4,14 +4,24 @@ import com.example.springprepare.dto.MemoRequestDto;
 import com.example.springprepare.dto.MemoResponseDto;
 import com.example.springprepare.entity.Memo;
 import com.example.springprepare.repository.MemoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class MemoService {
 
     private MemoRepository memoRepository;
 
+    @Autowired
     public MemoService(MemoRepository memoRepository) {
+        // 1. 'Bean' 이름으로 가져오기 (매개변수 : ApplicationContext context)
+        // MemoRepository memoRepository = (MemoRepository) context.getBean("memoRepository");
+
+        // 2. 'Bean' 클래스 형식으로 가져오기
+        // MemoRepository memoRepository = context.getBean(MemoRepository.class);
+
         this.memoRepository = memoRepository;
     }
 
